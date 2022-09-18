@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <Properties>
+        <Property name="path">logFile\</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="rolling" fileName="${path}personel.log"
+                     filePattern="${path}personel-%d{dd-MM-yyyy-HH-mm-ss}-%i.log">
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %logger{%36} - (%F:%L) - %msg%n"></PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="3 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+
+        <Console name="Console" target="SYSTEM.OUT">
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %logger{%36} - (%F:%L) - %msg%n"/>
+        </Console>
+
+        <File name="file" filename="${path}\abc.log">
+            <PatternLayout
+                    pattern="%d{ISO8601} [%t] %-5level %logger{%36} - (%F:%L) - %msg%n"/><!-- %-5level (%F:%L)- %msg%n-->
+        </File>
+
+
+    </Appenders>
+    <Loggers>
+        <Root level="ALL" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="rolling"/>
+        </Root>
+        <!-- logger da name  yani org...  gerekli
+        root da gerek yok
+        <logger name="org" level="All" additivity="false"> ayri ayri da olur tek seferde daha guzel olur
+                <AppenderRef ref="file"/>
+            </logger>
+            <logger name="org.example" level="Info">
+                <AppenderRef ref="Console"/>
+            </logger>-->
+    </Loggers>
+</Configuration>
+
+
+        <!-- <Console name="Console" target="SYSTEM.OUT"> -> burasi console yazdirmak icin
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %logger{%36} - (%F:%L) - %msg%n"/>
+            <!- -
+            <File>           ->  log ciktisinin file uzerine yazilacagi
+            <Console>        ->  log ciktisinin console yazilacagi
+            <RollingFile>    ->  file dosyasini role yaparak loglama yapar
+
+            <PatternLayout   -> logun ekran ciktisinin nasil olacagini belirlrer
+
+            %d{ISO8601}      ->  log tutulan yeri ve zamani gosterir
+            [%t]             ->  logumuz hangi metotda calisti onu yazdirir
+            %-5level         -> tutulan logun levelini verir
+            %logger{%36}     ->   tutulan log hangi classta tutulmus onu gosterir
+            %msg%n"          -> log mesajini bastirir
+            (%F:%L)          ->  tutulan logun hangi classta kacinci satirda oldugunu gosterir
+
+            <Loggers>        -> bu tag  icinde istedigimiz bolgelere seviyelere gore <Logger> ekleyerek detayli log yapmamizi sagliyor
+            <Root>           ->  Bir pakete ya da classa ozel <Logger> tagiyla log atanmamissa bu root gecerli olur.
+            <Appender>       ->  bu tag icinde birden fazla ekrana <Console> veya <Pattern> tanimlayabiliriz.
+                                biz bu <Root> tag icinde hangi Appender'i kullanacagimizi belirtiyoruz
+            Seviyeler :      -> All < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
+                                INFO  olarak kodlanan yerler  WARN yapilirsa  warnin altindaki (soldaki) yerler calismaz
+
+             additivity="false"-> tekrarliligi engeller
+<logger name="org.example.demo.log4j" level="INFO" additivity="false"> </logger >
+
+            - ->
+        </Console>-->
