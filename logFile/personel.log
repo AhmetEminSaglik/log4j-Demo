@@ -1,3 +1,11 @@
 2022-12-05T00:06:20,009 [main] INFO  %.%.%.%.Main - (Main.java:45) - Info Log
 2022-12-05T00:06:35,253 [main] WARN  %.%.%.%.Main - (Main.java:45) - Info Log
 2022-12-05T00:06:51,714 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-06T09:03:38,427 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-06T09:03:53,662 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-06T09:04:04,607 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-06T09:04:04,609 [main] WARN  %.%.%.%.Main - (Main.java:46) - Info Log
+2022-12-12T08:23:01,383 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-12T08:23:01,385 [main] WARN  %.%.%.%.Main - (Main.java:46) - Info Log
+2022-12-12T08:23:12,195 [main] ERROR %.%.%.%.Main - (Main.java:45) - Info Log
+2022-12-12T08:23:12,197 [main] WARN  %.%.%.%.Main - (Main.java:46) - Info Log

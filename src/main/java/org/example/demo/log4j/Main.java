@@ -43,6 +43,8 @@ public class Main {
 //        logger.trace("Trace Log");
 //        logger.debug("Debug Log");
         logger.error("Info Log");
+        logger.warn("Info Log");
+        System.out.println("test");
 //        logger.warn("Warn Log");
 //        logger.error("Error Log");
 //        logger.fatal("Fatal Log");
